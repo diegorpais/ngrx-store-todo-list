@@ -11,7 +11,10 @@ export function TodoReducer(
 
   switch (action.type) {
     case TodoActionTypes.ADD_ITEM:
-      return [...state, action.payload]
+      return [...state, action.payload];
+
+    case TodoActionTypes.DELETE_ITEM:
+      return state.filter(item => item.id !== action.payload);
 
     default:
       return state;

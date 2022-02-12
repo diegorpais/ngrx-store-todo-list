@@ -1,3 +1,4 @@
+import { DeleteItemAction } from "./../../store/actions/todo.action";
 import { TodoState } from "./../../store/models/todo-state.model";
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
@@ -22,6 +23,10 @@ export class ListComponent implements OnInit {
 
   getListTodoItems() {
     this.todoItems$ = this.store.select(store => store.todo);
+  }
+
+  deleteListItem(id: string) {
+    this.store.dispatch(new DeleteItemAction(id));
   }
 
 }

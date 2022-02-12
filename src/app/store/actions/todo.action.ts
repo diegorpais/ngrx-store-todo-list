@@ -7,4 +7,9 @@ export class AddItemAction implements Action {
   constructor(public payload: TodoItem) { }
 }
 
-export type TodoAction = AddItemAction | any;
+export class DeleteItemAction implements Action {
+  readonly type = TodoActionTypes.DELETE_ITEM;
+  constructor(public payload: string) { }
+}
+
+export type TodoAction = AddItemAction | DeleteItemAction | any;
