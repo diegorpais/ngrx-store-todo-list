@@ -9,6 +9,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { ListComponent } from './components/list/list.component';
 import { RegisFormComponent } from './components/regis-form/regis-form.component';
+import { TodoReducer } from './store/reducers/todo.reducer';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { RegisFormComponent } from './components/regis-form/regis-form.component
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({
+      todo: TodoReducer
+    }, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
