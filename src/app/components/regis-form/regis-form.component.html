@@ -1,0 +1,9 @@
+<form [formGroup]="todoForm"
+      (ngSubmit)="addTodoItem()">
+
+  <input type="text"
+         name="item"
+         formControlName="item">
+
+  <button type="submit">Add</button>
+</form>
